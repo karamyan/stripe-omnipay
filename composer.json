@@ -1,5 +1,5 @@
 {
-    "name": "sarsam/omnipay-stripe",
+    "name": "xxdevmaster/stripe-omnipay",
     "type": "library",
     "description": "stripe gateway for Omnipay payment processing library",
     "keywords": [
@@ -13,12 +13,12 @@
         "stripe",
         "purchase"
     ],
-    "homepage": "https://github.com/sarsam/omnipay-stripe.git",
+    "homepage": "https://github.com/xxdevmaster/stripe-omnipay.git",
     "license": "MIT",
     "authors": [
         {
-            "name": "Samvel Sargsyan",
-            "email": "sarsamve1993@gmail.com"
+            "name": "Levon Karamyan",
+            "email": "lyov.karamyan@gmail.com"
         }
     ],
     "autoload": {
@@ -36,3 +36,4 @@
         "phpro/grumphp": "^0.14"
     }
 }
+
