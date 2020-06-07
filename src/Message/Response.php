@@ -22,6 +22,13 @@ class Response extends AbstractResponse
     protected $requestId = null;
 
     /**
+     * Payment pending status
+     *
+     * @var bool $pending
+     */
+    private $pending = false;
+
+    /**
      * @var array
      */
     protected $headers = [];
@@ -41,7 +48,21 @@ class Response extends AbstractResponse
      */
     public function isSuccessful()
     {
+        if($this->isPending()) {
+           return false;
+        }
+
         return !isset($this->data['error']);
+    }
+
+    public function isPending()
+    {
+        return $this->pending;
+    }
+
+    public function setIsPending($param)
+    {
+        $this->pending = $param;
     }
 
     /**
