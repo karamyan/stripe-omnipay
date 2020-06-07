@@ -3,6 +3,7 @@
 namespace Omnipay\Stripe;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Stripe\Message\WebhookSignature;
 
 /**
  * Stripe Gateway.
@@ -378,5 +379,13 @@ class Gateway extends AbstractGateway
     public function refund(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\Stripe\Message\RefundRequest', $parameters);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function verifySignature($payload, $header, $secret, $tolerance = null)
+    {
+        return new WebhookSignature($payload, $header, $secret, $tolerance = null);
     }
 }
