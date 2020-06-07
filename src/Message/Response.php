@@ -48,18 +48,24 @@ class Response extends AbstractResponse
      */
     public function isSuccessful()
     {
-        if($this->isPending()) {
-           return false;
+        if ($this->isPending()) {
+            return false;
         }
 
         return !isset($this->data['error']);
     }
 
+    /**
+     * @return bool
+     */
     public function isPending()
     {
         return $this->pending;
     }
 
+    /**
+     * @param $param
+     */
     public function setIsPending($param)
     {
         $this->pending = $param;
